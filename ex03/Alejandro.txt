@@ -1,0 +1,141 @@
+PS C:\Users\adal-bos\Desktop> mkdir gitAlejandro
+
+
+    Directorio: C:\Users\adal-bos\Desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        02/10/2025     22:39                gitAlejandro
+
+
+PS C:\Users\adal-bos\Desktop> git init
+Initialized empty Git repository in C:/Users/adal-bos/Desktop/.git/
+PS C:\Users\adal-bos\Desktop> cd .\gitAlejandro\
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git init
+Initialized empty Git repository in C:/Users/adal-bos/Desktop/gitAlejandro/.git/
+PS C:\Users\adal-bos\Desktop\gitAlejandro> echo "La lluvia en Sevilla es una maravilla" > notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git add notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git commit -m "WTF!?!?"
+[master (root-commit) ab6a17e] WTF!?!?
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git branch rama-ideas
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git checkout rama-ideas
+Switched to branch 'rama-ideas'
+PS C:\Users\adal-bos\Desktop\gitAlejandro> echo "Esto se supone que es una idea de desarrollo" >> notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> echo "- bueno, y esto es otra línea y cambio, y también corto" >> notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git commit -m "Realizado los cambios"
+On branch rama-ideas
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   notas.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\adal-bos\Desktop\gitAlejandro>
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git add notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git commit -m "Realizado los cambios"
+[rama-ideas 57ea96b] Realizado los cambios
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git merge rama-ideas
+Already up to date.
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git checkout .\.git\
+error: pathspec '.\.git\' did not match any file(s) known to git
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git checkout gitAlejandro
+error: pathspec 'gitAlejandro' did not match any file(s) known to git
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git checkout
+PS C:\Users\adal-bos\Desktop\gitAlejandro> echo "Notas del equipo" >> notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> echo "Tenemos examen el 22" >> notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> echo "Preparense soldados" >> notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> echo "Jarl, Condemor" >> notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git add notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git commit -m "Las notas se han agregado, la sal al gusto del comensal"
+[rama-ideas 31129e5] Las notas se han agregado, la sal al gusto del comensal
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git merge rama-ideas
+Already up to date.
+PS C:\Users\adal-bos\Desktop\gitAlejandro> cat notas.txt
+La lluvia en Sevilla es una maravilla
+Esto se supone que es una idea de desarrollo
+- bueno, y esto es otra línea y cambio, y también corto
+Notas del equipo
+Tenemos examen el 22
+Preparense soldados
+Jarl, Condemor
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git branch -d rama-ideas
+error: cannot delete branch 'rama-ideas' used by worktree at 'C:/Users/adal-bos/Desktop/gitAlejandro'
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git branch
+  master
+* rama-ideas
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git checkout master
+Switched to branch 'master'
+PS C:\Users\adal-bos\Desktop\gitAlejandro> echo "Notas del equipo" >> notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> echo "La cagaste julancaste" >> notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git add notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git commit -m "Poh ke la e liao parda, lo siento mucho y no volvera a pasar"
+[master b0fbc2a] Poh ke la e liao parda, lo siento mucho y no volvera a pasar
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git merge rama-ideas
+warning: Cannot merge binary files: notas.txt (HEAD vs. rama-ideas)
+Auto-merging notas.txt
+CONFLICT (content): Merge conflict in notas.txt
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git branch
+* master
+  rama-ideas
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git merge rama-ideas
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git add notas.txt
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git commit -m "LaMadreQueMeHaParido"
+[master 79b11d6] LaMadreQueMeHaParido
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git checkout master
+Already on 'master'
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git branch -d rama-ideas
+Deleted branch rama-ideas (was 31129e5).
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git remote add origin https://github.com/alexdms92/Examen-IH-M3-Alejandro
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git branch -M main
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git push -u origin main
+info: please complete authentication in your browser...
+To https://github.com/alexdms92/Examen-IH-M3-Alejandro
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/alexdms92/Examen-IH-M3-Alejandro'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git push -u notas.txt origin main
+error: src refspec origin does not match any
+error: failed to push some refs to 'notas.txt'
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git push -u notas.txt
+fatal: invalid gitfile format: notas.txt
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\adal-bos\Desktop\gitAlejandro> git push -u origin main
+To https://github.com/alexdms92/Examen-IH-M3-Alejandro
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/alexdms92/Examen-IH-M3-Alejandro'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\adal-bos\Desktop\gitAlejandro> history -a Alejandro.txt
+Get-History : No se encuentra ningún parámetro que coincida con el nombre del parámetro 'a'.
+En línea: 1 Carácter: 9
++ history -a Alejandro.txt
++         ~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-History], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetHistoryCommand
+
+PS C:\Users\adal-bos\Desktop\gitAlejandro>
